@@ -14,4 +14,19 @@ public class ProfilePage extends BasePage{
     public Locator getWrapper () {
         return profilePageWrapper;
     }
+
+    public ProfilePage enterCurrentPassword(String password) {
+        page.locator("#inputProfileCurrentPassword").fill(password);
+        return this;
+    }
+
+    public ProfilePage setNewEmail(String email) {
+        page.locator("#inputProfileEmail").fill(email);
+        return this;
+    }
+
+    public ProfilePage clickSaveButton() {
+        page.locator(".btn-submit").click();
+        return this;
+    }
 }

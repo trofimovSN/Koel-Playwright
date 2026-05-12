@@ -16,7 +16,8 @@
         <playwright.version>1.44.0</playwright.version>
         <junit.version>5.10.2</junit.version>
         <allure.version>2.27.0</allure.version>
-        <aspectj.version>1.9.22.1</aspectj.version> </properties>
+        <aspectj.version>1.9.22.1</aspectj.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -25,9 +26,17 @@
             <version>${playwright.version}</version>
         </dependency>
 
+        <!-- JUnit 5 Jupiter BOM (includes api, engine, and params) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
@@ -69,13 +78,7 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
+                <!-- AspectJ weaver is already in main dependencies with test scope, no need to duplicate here -->
             </plugin>
 
             <plugin>
