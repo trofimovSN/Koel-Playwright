@@ -17,6 +17,7 @@
         <junit.version>5.10.2</junit.version>
         <allure.version>2.27.0</allure.version>
         <aspectj.version>1.9.22.1</aspectj.version>
+        <javafaker.version>1.0.2</javafaker.version> <!-- Added JavaFaker version -->
     </properties>
 
     <dependencies>
@@ -53,6 +54,13 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- JavaFaker dependency -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
         </dependency>
     </dependencies>
 

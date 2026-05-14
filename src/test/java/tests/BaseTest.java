@@ -17,7 +17,7 @@ public class BaseTest {
     @BeforeAll
     static void setUpBrowser() {
         playwright = Playwright.create();
-        
+
         String browserName = ConfigReader.get("browser").toLowerCase();
         switch (browserName) {
             case "firefox" -> browser = playwright.firefox().launch(new BrowserType

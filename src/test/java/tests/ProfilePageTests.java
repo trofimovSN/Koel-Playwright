@@ -42,7 +42,7 @@ public class ProfilePageTests extends BaseTest {
                     .setNewEmail(invalidEmail)
                     .clickSaveButton();
 
-            assertAll("Cheking email" + scenarioDescription,
+            assertAll("Checking email" + scenarioDescription,
                     () -> assertThat(profilePage.getErrorToast()).isVisible(),
                     () -> assertThat(profilePage.getSuccessToast()).not().isVisible()
             );
